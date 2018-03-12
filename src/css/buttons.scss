@@ -1,0 +1,15 @@
+.btn {
+  padding: 0.5rem 1.5rem;
+  font-weight: 300;
+  &:focus {
+    box-shadow: none;
+  }
+  &:hover, &:active {
+    background-color: #cf6d17;
+    border-color: #cf6d17;
+  }
+}
+
+.btn-rounded {
+  border-radius: 50px;
+}

@@ -1,0 +1,25 @@
+.navbar-logo {
+  img {
+    width: auto;
+    height: $navbar-height;
+  }
+}
+
+.nav-item {
+  margin-right: 30px;
+  &:last-child {margin-right: 0;}
+  a {
+    @extend .text-light;
+    display: block;
+    font-size: 1.13rem;
+    line-height: 2;
+    text-transform: uppercase;
+    border-bottom: 2px solid transparent;
+  }
+  a:hover {
+    text-decoration: none;
+    color: #fff !important;
+    border-bottom-color: $brand-primary;
+  }
+
+}
