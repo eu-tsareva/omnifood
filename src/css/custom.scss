@@ -59,4 +59,37 @@ header {
   }
 }
 
-//
+// STEPS
+.work-steps {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.steps-list {
+  padding: 0;
+  counter-reset: _counter;
+  list-style: none;
+}
+.steps-item {
+  position: relative;
+  margin-bottom: 35px;
+  padding-left: 75px;
+  font-size: 1.2rem;
+  &::before {
+    content: counter(_counter);
+    counter-increment: _counter;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 55px;
+    height: 55px;
+    font-size: 1.8rem;
+    line-height: 55px;
+    text-align: center;
+    color: $brand-primary;
+    border: 2px solid $brand-primary;
+    border-radius: 50%;
+    box-sizing: content-box
+  }
+}
