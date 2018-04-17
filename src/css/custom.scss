@@ -1,3 +1,4 @@
+// HEADER
 header {
   height: 100vh;
   background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
@@ -11,6 +12,7 @@ header {
   }
 }
 
+// PROMO
 .promo {
   position: absolute;
   top: 50%;
@@ -23,3 +25,38 @@ header {
     margin-right: 15px;
   }
 }
+
+// MEALS
+.section-meals {
+  padding: 0;
+}
+
+.meals-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.meals-item {
+  display: inline-block;
+  flex-basis: 25%;
+}
+
+.meals-photo {
+  width: 100%;
+  margin: 0;
+  background-color: #000;
+  overflow: hidden;
+  img {
+    width: 100%;
+    height: auto;
+    transform: scale(1.2);
+    opacity: 0.7;
+    transition: all 0.5s;
+    &:hover {
+      transform: scale(1.03);
+      opacity: 1;
+    }
+  }
+}
+
+//
