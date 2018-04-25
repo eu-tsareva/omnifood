@@ -1,13 +1,13 @@
-const path = require('path');
-const webpack = require('webpack');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const path = require("path");
+const webpack = require("webpack");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 module.exports = {
-  entry: './src/app.js',
+  entry: "./src/app.js",
   output: {
-    path: path.resolve(__dirname, 'dist'),
-    filename: 'bundle.js'
+    path: path.resolve(__dirname, "dist"),
+    filename: "bundle.js"
   },
   module: {
     rules: [
@@ -18,21 +18,23 @@ module.exports = {
         //   use: ['css-loader', 'sass-loader', 'postcss-loader'],
         //   disable: true
         // })
-        use: ['style-loader', 'css-loader', 'postcss-loader', 'sass-loader']
+        use: ["style-loader", "css-loader", "postcss-loader", "sass-loader"]
       },
       {
         test: /\.(png|jp(e*)g|svg)$/,
-          use: [{
-              loader: 'url-loader',
-              options: {
-                  limit: 8000,
-                  name: 'images/[hash]-[name].[ext]'
-              }
-          }]
+        use: [
+          {
+            loader: "file-loader",
+            options: {
+              limit: 8000,
+              name: "images/[hash]-[name].[ext]"
+            }
+          }
+        ]
       },
       {
         test: /\.(eot|svg|ttf|woff|woff2)$/,
-        use: 'file-loader'
+        use: "file-loader"
       }
     ]
   },
@@ -40,13 +42,15 @@ module.exports = {
     // new ExtractTextPlugin('style.css')
   ],
   devServer: {
-    contentBase: path.resolve(__dirname, '.'),
-    hot: true
+    contentBase: path.resolve(__dirname, "."),
+    watchContentBase: true,
+    hot: true,
+    inline: true
   },
   plugins: [
     new HtmlWebpackPlugin({
-      filename: 'index.html',
-      template: 'index.html'
+      filename: "index.html",
+      template: "index.html"
     }),
     new webpack.NamedModulesPlugin(),
     new webpack.HotModuleReplacementPlugin()
