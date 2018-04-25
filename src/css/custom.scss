@@ -1,8 +1,10 @@
 // HEADER
 header {
   height: 100vh;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-                    url(../img/header-bg.jpg);
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.7),
+    rgba(0, 0, 0, 0.7)),
+    url(../img/header-bg.jpg);
   background-size: cover;
   background-position: 50% 50%;
 
@@ -18,7 +20,9 @@ header {
   top: 50%;
   transform: translateY(-50%);
   margin-left: 1rem;
-  @extend  .text-light;
+
+  @extend .text-light;
+
   white-space: nowrap;
 
   .btn:not(:last-child) {
@@ -34,6 +38,8 @@ header {
 .meals-list {
   display: flex;
   flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
 }
 
 .meals-item {
@@ -46,12 +52,14 @@ header {
   margin: 0;
   background-color: #000;
   overflow: hidden;
+
   img {
     width: 100%;
     height: auto;
     transform: scale(1.2);
     opacity: 0.7;
     transition: all 0.5s;
+
     &:hover {
       transform: scale(1.03);
       opacity: 1;
@@ -60,6 +68,10 @@ header {
 }
 
 // STEPS
+.section-steps {
+  background-color: #f2f2f2;
+}
+
 .work-steps {
   position: relative;
   top: 50%;
@@ -67,15 +79,18 @@ header {
 }
 
 .steps-list {
+  margin-bottom: 80px;
   padding: 0;
   counter-reset: _counter;
   list-style: none;
 }
+
 .steps-item {
   position: relative;
   margin-bottom: 35px;
   padding-left: 75px;
   font-size: 1.2rem;
+
   &::before {
     content: counter(_counter);
     counter-increment: _counter;
@@ -85,11 +100,21 @@ header {
     width: 55px;
     height: 55px;
     font-size: 1.8rem;
-    line-height: 55px;
+    line-height: 51px;
     text-align: center;
     color: $brand-primary;
     border: 2px solid $brand-primary;
     border-radius: 50%;
-    box-sizing: content-box
+  }
+}
+
+.work-btn {
+  .btn-img {
+    margin-left: 15px;
+    transition: transform 100ms linear;
+
+    &:hover {
+      transform: scale(1.05);
+    }
   }
 }
