@@ -71,10 +71,6 @@ header {
 }
 
 // STEPS
-.section-steps {
-  background-color: #f2f2f2;
-}
-
 .work-steps {
   position: relative;
   top: 50%;
@@ -184,5 +180,73 @@ header {
   span {
     font-size: 0.9em;
     font-style: normal;
+  }
+}
+
+//PLANS
+.plan {
+  width: 90%;
+  margin: 0 auto;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 1px 2px 1px rgba(0, 0, 0, 0.12);
+}
+
+.plan-section {
+  padding: 15px;
+  border-bottom: 1px solid #e8e8e8;
+
+  &:first-child {
+    background-color: #fcfcfc;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+  }
+
+  &:last-child {
+    text-align: center;
+    border-bottom: none;
+  }
+}
+
+.plan-price-month {
+  margin-bottom: 10px;
+  line-height: 1.2;
+  color: $brand-primary;
+}
+
+.plan-price-meal {
+  margin: 0;
+  font-size: 0.9em;
+}
+
+.plan-features {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  li {
+    position: relative;
+    padding-left: 30px;
+
+    &::before {
+      content: "\F3FD";
+      position: absolute;
+      left: 0;
+      top: 50%;
+      font-family: "Ionicons";
+      font-size: 2em;
+      color: $brand-primary;
+      transform: translateY(-50%);
+      speak: none;
+    }
+  }
+
+  li.empty {
+    text-decoration: line-through;
+    color: opacify($text-color, 0.8);
+
+    &::before {
+      content: "\F404";
+    }
   }
 }
