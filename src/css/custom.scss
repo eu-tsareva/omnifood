@@ -2,11 +2,14 @@
 header {
   height: 100vh;
   background-image:
-    linear-gradient(rgba(0, 0, 0, 0.7),
-    rgba(0, 0, 0, 0.7)),
+    linear-gradient(
+      rgba(0, 0, 0, 0.7),
+      rgba(0, 0, 0, 0.7)
+    ),
     url(../img/header-bg.jpg);
   background-size: cover;
   background-position: 50% 50%;
+  background-attachment: fixed;
 
   .container {
     position: relative;
@@ -129,5 +132,57 @@ header {
 
   .text-link {
     letter-spacing: 0.5px;
+  }
+}
+
+//TESTIMONIALS
+.section-testimonials {
+  color: #fff;
+  background-image:
+    linear-gradient(
+      rgba(0, 0, 0, 0.9),
+      rgba(0, 0, 0, 0.9)
+    ),
+    url("../img/testimonials-bg.jpg");
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.testimonial-quote {
+  position: relative;
+  padding: 2%;
+  padding-top: 55px;
+
+  &::before {
+    content: '\201C';
+    position: absolute;
+    display: block;
+    top: -12px;
+    left: -8px;
+    font-size: 5em;
+  }
+}
+
+.testimonial-text {
+  height: 145px;
+  font-style: italic;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.testimonial-cite {
+  display: block;
+  margin-top: 25px;
+
+  img {
+    width: 45px;
+    margin-right: 10px;
+    border-radius: 50%;
+    vertical-align: middle;
+  }
+
+  span {
+    font-size: 0.9em;
+    font-style: normal;
   }
 }
