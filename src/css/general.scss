@@ -53,3 +53,16 @@ img {
   font-weight: 100;
 }
 
+//FORM
+.form-control:focus {
+  box-shadow: none;
+}
+
+.form-check-input {
+  margin-top: 0.4em;
+}
+
+textarea {
+  height: 100px;
+}
+
