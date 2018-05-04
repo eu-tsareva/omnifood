@@ -1,8 +1,10 @@
 @import 'variables';
 @import '~bootstrap/scss/bootstrap';
 @import '../../vendor/ionicons/css/ionicons.min.css';
-@import 'typography.scss';
+@import 'general';
+@import 'typography';
 @import 'navbar';
 @import 'buttons';
-@import 'general';
+@import 'forms';
+@import 'footer';
 @import 'custom';
