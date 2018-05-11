@@ -14,6 +14,10 @@ header {
   .container {
     position: relative;
     height: 100%;
+
+    @media screen and (max-width: 768px) {
+      width: 100%;
+    }
   }
 }
 
@@ -26,16 +30,32 @@ header {
 
   @extend .text-light;
 
-  white-space: nowrap;
+  .btn {
+    margin-bottom: 15px;
 
-  .btn:not(:last-child) {
-    margin-right: 15px;
+    &:not(:last-child) {
+      margin-right: 15px;
+    }
+  }
+}
+
+// FEATURES
+.section-features {
+  @media screen and (max-width: 768px) {
+    .icon-big {
+      font-size: 3.3em;
+      text-align: left;
+    }
   }
 }
 
 // MEALS
 .section-meals {
   padding: 0;
+
+  @media screen and (max-width: 650px) {
+    display: none;
+  }
 }
 
 .meals-list {
@@ -77,11 +97,26 @@ header {
   transform: translateY(-50%);
 }
 
+.steps-photo {
+  @media screen and (max-width: 768px) {
+    width: 50%;
+    margin: 0 auto 30px;
+  }
+
+  @media screen and (max-width: 768px) {
+    width: 55%;
+  }
+}
+
 .steps-list {
   margin-bottom: 80px;
   padding: 0;
   counter-reset: _counter;
   list-style: none;
+
+  @media screen and (max-width: 768px) {
+    margin-bottom: 70px;
+  }
 }
 
 .steps-item {
@@ -108,8 +143,11 @@ header {
 }
 
 .work-btn {
+  display: flex;
+  justify-content: flex-start;
+
   .btn-img {
-    margin-left: 15px;
+    margin-right: 10px;
     transition: transform 100ms linear;
 
     &:hover {
@@ -119,6 +157,12 @@ header {
 }
 
 //CITIES
+.section-cities {
+  @media screen and (max-width: 768px) {
+
+  }
+}
+
 .city-image {
   margin-bottom: 15px;
 }
@@ -142,6 +186,12 @@ header {
     url("../img/testimonials-bg.jpg");
   background-attachment: fixed;
   background-size: cover;
+
+  @media screen and (max-width: 768px) {
+    .container {
+      max-width: 555px;
+    }
+  }
 }
 
 .testimonial-quote {
@@ -157,6 +207,13 @@ header {
     left: -8px;
     font-size: 5em;
   }
+
+  @media screen and (max-width: 768px) {
+    padding-top: 40px;
+    &::before {
+      font-size: 4em;
+    }
+  }
 }
 
 .testimonial-text {
@@ -164,6 +221,10 @@ header {
   font-style: italic;
   text-overflow: ellipsis;
   overflow: hidden;
+
+  @media screen and (max-width: 768px) {
+    height: auto;
+  }
 }
 
 .testimonial-cite {
@@ -180,6 +241,14 @@ header {
   span {
     font-size: 0.9em;
     font-style: normal;
+  }
+
+  @media screen and (max-width: 768px) {
+    margin-top: 15px;
+
+    img {
+      width: 45px;
+    }
   }
 }
 
@@ -217,6 +286,10 @@ header {
 .plan-price-meal {
   margin: 0;
   font-size: 0.9em;
+
+  @media screen and (max-width: 768px) {
+    font-size: 1em;
+  }
 }
 
 .plan-features {
@@ -252,7 +325,15 @@ header {
 }
 
 //FEEDBACK
+.section-feedback {
+  @media screen and (max-width: 768px) {
+    .col-xs-12 {
+      margin-bottom: 0.2rem;
+    }
+  }
+}
+
 .form-feedback {
-  width: 60%;
+  max-width: 740px;
   margin: 0 auto;
 }

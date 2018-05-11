@@ -1,4 +1,3 @@
-
 .page-footer {
   padding: 25px 0 15px;
   color: #888;
@@ -15,8 +14,14 @@
   }
 
   .footer-social-nav {
+    justify-content: flex-end;
+
     .nav-item:not(:last-child) {
       margin-right: 15px;
+    }
+
+    @media screen and (max-width: 768px) {
+      justify-content: flex-start;
     }
   }
 
@@ -53,10 +58,18 @@
     color: #e4405f;
   }
 
-
-
   .footer-copyright {
+    text-align: right;
     font-size: 0.9em;
+
+    @media screen and (max-width: 768px) {
+      text-align: left;
+    }
   }
 
+  @media screen and (max-width: 768px) {
+    .col-xs-12 {
+      margin-bottom: 0;
+    }
+  }
 }

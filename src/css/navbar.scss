@@ -1,8 +1,19 @@
 .page-header {
+  .navbar {
+    padding: 1rem;
+  }
+
   .navbar-logo {
     img {
       width: auto;
       height: $navbar-height;
+    }
+
+    @media screen and (max-width: 768px) {
+      img {
+        width: 60px;
+        height: 60px;
+      }
     }
   }
 
