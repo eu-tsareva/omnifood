@@ -1,6 +1,11 @@
 const navbar = document.querySelector(".page-header .navbar");
 const sectionFeatures = document.querySelector(".section-features");
 const body = document.querySelector("body");
+const featuresBody = document.querySelector("#features-body");
+const citiesBody = document.querySelector("#cities-body");
+const stepsImage = document.querySelector("#steps-image");
+const planPrimary = document.querySelector("#plan-primary");
+const halfHeight = window.innerHeight/2;
 
 window.addEventListener("DOMContentLoaded", () => {
   window.dispatchEvent(new Event("scroll"));
@@ -25,17 +30,42 @@ window.addEventListener("DOMContentLoaded", () => {
 
 window.addEventListener("scroll", () => {
   handleScroll(sectionFeatures, direction => {
-    if (direction === "after") {
+    if (direction === "down") {
       navbar.classList.add("fixed-top");
-    } else if(direction === "before") {
+    } else if(direction === "up") {
       navbar.classList.remove("fixed-top");
     }
   }, 62);
+
+  handleScroll(featuresBody, (direction) => {
+    if (direction === "down") {
+      featuresBody.classList.add("animated", "fadeIn")
+    }
+  });
+
+  handleScroll(stepsImage, (direction) => {
+    if (direction === "down") {
+      stepsImage.classList.add("animated", "fadeInUp")
+    }
+  });
+
+  handleScroll(citiesBody, (direction) => {
+    if (direction === "down") {
+      citiesBody.classList.add("animated", "fadeIn")
+    }
+  });
+
+  handleScroll(planPrimary, (direction) => {
+    if (direction === "down") {
+      planPrimary.classList.add("animated", "pulse")
+    }
+  });
+
 });
 
-handleScroll = (element, callback, userOffset = 0) => {
+handleScroll = (element, callback, userOffset = halfHeight) => {
   const elOffset = element.getBoundingClientRect().top;
-  const scrollPosition = (elOffset - userOffset) >= 0 ? "before" : "after";
+  const scrollPosition = (elOffset - userOffset) >= 0 ? "up" : "down";
   callback(scrollPosition);
 }
 

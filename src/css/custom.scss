@@ -259,6 +259,10 @@ header {
   background-color: #fff;
   border-radius: 5px;
   box-shadow: 0 1px 2px 1px rgba(0, 0, 0, 0.12);
+
+  &#plan-primary {
+    animation-duration: 0.7s;
+  }
 }
 
 .plan-section {
