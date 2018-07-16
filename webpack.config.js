@@ -35,6 +35,13 @@ module.exports = {
       {
         test: /\.(eot|svg|ttf|woff|woff2)$/,
         use: "file-loader"
+      },
+      {
+        test: /\.js$/,
+        include: [
+          path.resolve(__dirname, "src"),
+          path.resolve(__dirname, "node_modules")
+        ]
       }
     ]
   },

@@ -1,3 +1,5 @@
+import 'bootstrap';
+
 const navbar = document.querySelector(".page-header .navbar");
 const sectionFeatures = document.querySelector(".section-features");
 const body = document.querySelector("body");
@@ -63,18 +65,18 @@ window.addEventListener("scroll", () => {
 
 });
 
-handleScroll = (element, callback, userOffset = halfHeight) => {
+const handleScroll = (element, callback, userOffset = halfHeight) => {
   const elOffset = element.getBoundingClientRect().top;
   const scrollPosition = (elOffset - userOffset) >= 0 ? "up" : "down";
   callback(scrollPosition);
 }
 
-animateScroll = (element, duration) => {
+const animateScroll = (element, duration) => {
   const elOffset = element.getBoundingClientRect().top + window.scrollY;
   const increment = 20;
   let currentTime = 0;
 
-  animate = () => {
+  const animate = () => {
     const change = elOffset - body.scrollTop;
     currentTime += increment;
     body.scrollTop += Math.easeInOutQuad(currentTime, change, duration);
